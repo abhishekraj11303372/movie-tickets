@@ -1,6 +1,9 @@
-import React from 'react'
+import React from 'react';
 // import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import { BrowserRouter,Routes, Route, Link} from "react-router-dom"
+import { BrowserRouter,Routes, Route, Link} from "react-router-dom";
+import Home from './components/Home';
+import Admin from './components/Admin';
+import Movies from './components/Movies';
 
 export default function App() {
   return (
@@ -40,16 +43,4 @@ export default function App() {
     </div>
     </BrowserRouter>
   );
-}
-
-function Home () {
-  return <h1>Home</h1>
-}
-
-function Movies () {
-  return <h1>Movies</h1>
-}
-
-function Admin () {
-  return <h1>Manage Catalogue</h1>
 }
