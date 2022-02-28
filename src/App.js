@@ -1,6 +1,6 @@
 import React from 'react';
 // import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import { BrowserRouter,Routes, Route, Link} from "react-router-dom";
+import { BrowserRouter,Routes, Route, Link, useParams} from "react-router-dom";
 import Home from './components/Home';
 import Admin from './components/Admin';
 import Movies from './components/Movies';
@@ -36,6 +36,7 @@ export default function App() {
           <Routes>
           <Route path="/" element={<><Home /></>} ></Route>
             <Route path="/movies" element={<><Movies /></>} ></Route>
+            <Route path="/movies/:id" element={<><Movie /></>} ></Route>
             <Route path="/admin" element={<><Admin /></>} ></Route>
           </Routes>
         </div>
@@ -43,4 +44,9 @@ export default function App() {
     </div>
     </BrowserRouter>
   );
+}
+
+function Movie() {
+  let { id } = useParams();
+  return <h2>Movie id {id}</h2> 
 }
