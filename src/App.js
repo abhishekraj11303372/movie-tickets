@@ -1,9 +1,10 @@
 import React from 'react';
-import { BrowserRouter,Routes, Route, Link, useParams} from "react-router-dom";
+import { BrowserRouter,Routes, Route, Link} from "react-router-dom";
 import Home from './components/Home';
 import Admin from './components/Admin';
 import Movies from './components/Movies';
 import Categories from './components/Categories';
+import OneMovie from './components/OneMovie';
 
 export default function App() {
   return (
@@ -39,7 +40,7 @@ export default function App() {
           <Routes>  
           <Route path="/" element={<Home />} ></Route>
             <Route path="/movies" element={<><Movies /></>} ></Route>
-            <Route path="/movies/:id" element={<><Movie /></>} ></Route>
+            <Route path="/movies/:id" element={<OneMovie />} ></Route>
             <Route exact path="/by-category/*" element={<CategoryPage />} >
               <Route path="action" element={<p>Action page</p>}/>
               <Route path="comedy" element={<p>Comedy Page</p>}/>
@@ -60,10 +61,10 @@ export default function App() {
   );
 }
 
-function Movie() {
-  let { id } = useParams();
-  return <h2>Movie id {id}</h2> 
-}
+// function Movie() {
+//   let { id } = useParams();
+//   return <h2>Movie id {id}</h2> 
+// }
 
 function CategoryPage() {
 
